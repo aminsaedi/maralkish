@@ -18,7 +18,10 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.maralkish.profishop",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.0",
+      "config": {
+        "googleMapsApiKey": "AIzaSyDgPNCnGf8qar9e1K1FWkb7AAIbKugE7-U"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -42,7 +45,7 @@
       ],
       "googleServicesFile": "./google-services.json",
       "config": {
-        "googleMaps": { "apiKey": "AIzaSyB16K40VOs7M3-qujlidYqTThUIiW7YSdA" }
+        "googleMaps": { "apiKey": "AIzaSyDgPNCnGf8qar9e1K1FWkb7AAIbKugE7-U" }
       },
       "permissions": [
         "ACCESS_COARSE_LOCATION",
