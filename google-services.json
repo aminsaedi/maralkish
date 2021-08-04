@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "338193044178",
+    "firebase_url": "https://push-test-9e973.firebaseio.com",
+    "project_id": "push-test-9e973",
+    "storage_bucket": "push-test-9e973.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338193044178:android:584748a735a1da7e4b130b",
+        "android_client_info": {
+          "package_name": "com.mapsabad.profishop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338193044178-ft0lbfb6mfl8l03mfo4fudfmc0lvprdp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoG1oBAovY94C7PGlQF-wRa6hAVfRadQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338193044178-ft0lbfb6mfl8l03mfo4fudfmc0lvprdp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338193044178:android:16b9281306308970",
+        "android_client_info": {
+          "package_name": "io.cordova.myapp8d6aed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338193044178-ft0lbfb6mfl8l03mfo4fudfmc0lvprdp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoG1oBAovY94C7PGlQF-wRa6hAVfRadQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338193044178-ft0lbfb6mfl8l03mfo4fudfmc0lvprdp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
