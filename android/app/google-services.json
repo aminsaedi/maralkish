@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "871801795970",
+    "project_id": "applicationsfcm",
+    "storage_bucket": "applicationsfcm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871801795970:android:3ef1a2c0348e97da8b4b9b",
+        "android_client_info": {
+          "package_name": "com.maralkish.profishop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871801795970-tfgjs8ku2355kecuare72joogb8jkhr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzv36wceTYDvKlSZ3rGx7xYJ2a9mTHiFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871801795970-tfgjs8ku2355kecuare72joogb8jkhr0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
