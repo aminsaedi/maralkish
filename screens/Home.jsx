@@ -49,7 +49,7 @@ const Home = ({ navigation }) => {
   ];
 
   return (
-    <AppView topSafe>
+    <AppView topSafe skipAndroid>
       <HomeSearchBar />
       <ScrollView
         showsVerticalScrollIndicator={false}
