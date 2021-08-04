@@ -9,9 +9,9 @@ const SliderItem = ({ slide }) => {
     <View style={styles.container}>
       <ProgressiveImage
         source={{
-          uri: imageLinkGenerator(slide, "webp"),
+          uri: imageLinkGenerator(slide, "jpg"),
         }}
-        thumbnailSource={{ uri: imageLinkGenerator(slide, "webp", 200) }}
+        thumbnailSource={{ uri: imageLinkGenerator(slide, "jpg", 200) }}
         style={{ width: "100%", height: "100%" }}
       />
       <Text>{slide.id}</Text>

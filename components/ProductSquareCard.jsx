@@ -30,14 +30,14 @@ const ProductSquareCard = ({ product }) => {
             source={{
               uri: imageLinkGenerator(
                 product.image,
-                "webp",
+                "jpg",
                 windowWidth - 50,
                 windowHeight,
                 80
               ),
             }}
             thumbnailSource={{
-              uri: imageLinkGenerator(product.image, "webp", 200, 200, 30),
+              uri: imageLinkGenerator(product.image, "jpg", 200, 200, 30),
             }}
             style={{ width: "100%", height: "100%" }}
             resizeMethod="auto"

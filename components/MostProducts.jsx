@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-native-snap-carousel";
-import { Text, View, TouchableOpacity, Dimensions,Image } from "react-native";
+import { Text, View, TouchableOpacity, Dimensions, Image } from "react-native";
 import SkeletonPlaceholder from "react-native-skeleton-placeholder";
 import { useNavigation } from "@react-navigation/native";
 
@@ -171,12 +171,12 @@ const MostProducts = ({ mode = "sales", style }) => {
                 {item[0].image ? (
                   <ProgressiveImage
                     source={{
-                      uri: imageLinkGenerator(item[0].image, "webp", 300, 300),
+                      uri: imageLinkGenerator(item[0].image, "jpg", 300, 300),
                     }}
                     thumbnailSource={{
                       uri: imageLinkGenerator(
                         item[0].image,
-                        "webp",
+                        "jpg",
                         150,
                         150,
                         50
@@ -244,12 +244,12 @@ const MostProducts = ({ mode = "sales", style }) => {
                 {item[1].image ? (
                   <ProgressiveImage
                     source={{
-                      uri: imageLinkGenerator(item[1].image, "webp", 300, 300),
+                      uri: imageLinkGenerator(item[1].image, "jpg", 300, 300),
                     }}
                     thumbnailSource={{
                       uri: imageLinkGenerator(
                         item[1].image,
-                        "webp",
+                        "jpg",
                         150,
                         150,
                         50
@@ -318,12 +318,12 @@ const MostProducts = ({ mode = "sales", style }) => {
                 {item[2].image ? (
                   <ProgressiveImage
                     source={{
-                      uri: imageLinkGenerator(item[2].image, "webp", 300, 300),
+                      uri: imageLinkGenerator(item[2].image, "jpg", 300, 300),
                     }}
                     thumbnailSource={{
                       uri: imageLinkGenerator(
                         item[2].image,
-                        "webp",
+                        "jpg",
                         150,
                         150,
                         50

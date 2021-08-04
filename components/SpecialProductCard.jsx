@@ -73,7 +73,7 @@ const SpecialProductCard = ({ product }) => {
           <ProgressiveImage
             source={{ uri: imageLinkGenerator(product.image) }}
             thumbnailSource={{
-              uri: imageLinkGenerator(product.image, "webp", 200),
+              uri: imageLinkGenerator(product.image, "jpg", 200),
             }}
             style={{ width: "100%", height: "100%" }}
             resizeMode="contain"
@@ -124,7 +124,7 @@ const SpecialProductCard = ({ product }) => {
                   fontFamily: "primary",
                   color: colors.white,
                   fontSize: 12,
-                  letterSpacing : 2
+                  letterSpacing: 2,
                 }}
               >
                 {Math.round(

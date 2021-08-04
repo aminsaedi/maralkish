@@ -20,7 +20,13 @@ import pages from "../navigation/routes";
 // apis import
 import { apiGet9CategoryProduct } from "../api/products";
 
-const CategoryGroup3By3 = ({ categoryId, style, title, products,totalItems }) => {
+const CategoryGroup3By3 = ({
+  categoryId,
+  style,
+  title,
+  products,
+  totalItems,
+}) => {
   const [loading, setLoading] = useState(false);
 
   const navigation = useNavigation();
@@ -189,10 +195,10 @@ const CategoryGroup3By3 = ({ categoryId, style, title, products,totalItems }) =>
             {item.image ? (
               <ProgressiveImage
                 source={{
-                  uri: imageLinkGenerator(item.image, "webp", 300, 300),
+                  uri: imageLinkGenerator(item.image, "jpg", 300, 300),
                 }}
                 thumbnailSource={{
-                  uri: imageLinkGenerator(item.image, "webp", 100, 100),
+                  uri: imageLinkGenerator(item.image, "jpg", 100, 100),
                 }}
                 style={{ width: "100%", height: "100%" }}
                 resizeMode="contain"

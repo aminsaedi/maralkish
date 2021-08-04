@@ -118,7 +118,7 @@ const Images = ({ route, navigation }) => {
           // navigation.navigate(pages.product, {
           //   productId: route.params.productId,
           // });
-          navigation.goBack()
+          navigation.goBack();
         }}
         errorComponent={() => (
           <View>
@@ -127,7 +127,7 @@ const Images = ({ route, navigation }) => {
             </Text>
           </View>
         )}
-        flatListProps={{showsHorizontalScrollIndicator : false}}
+        flatListProps={{ showsHorizontalScrollIndicator: false }}
       />
       <Animated.View
         style={{
@@ -154,7 +154,7 @@ const Images = ({ route, navigation }) => {
               onPress={() => setCurrentImage(index)}
             >
               <Image
-                source={{ uri: imageLinkGenerator(item, "webp", 200) }}
+                source={{ uri: imageLinkGenerator(item, "jpg", 200) }}
                 style={{
                   width: 100,
                   height: "100%",

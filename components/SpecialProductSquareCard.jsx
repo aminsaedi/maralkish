@@ -50,7 +50,7 @@ const SpecialProductSquareCard = ({ product }) => {
         style={{
           width: "100%",
           height: "50%",
-          paddingLeft : "2.5%"
+          paddingLeft: "2.5%",
           // display: "flex",
           // alignItems: "center",
           // justifyContent: "center",
@@ -58,10 +58,10 @@ const SpecialProductSquareCard = ({ product }) => {
       >
         <ProgressiveImage
           source={{
-            uri: imageLinkGenerator(product.image, "webp", 500, 500),
+            uri: imageLinkGenerator(product.image, "jpg", 500, 500),
           }}
           thumbnailSource={{
-            uri: imageLinkGenerator(product.image, "webp", 200, 200),
+            uri: imageLinkGenerator(product.image, "jpg", 200, 200),
           }}
           style={{ width: "95%", height: "98%" }}
           resizeMode="contain"

@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text,Image } from "react-native";
+import { TouchableOpacity, Text, Image } from "react-native";
 
 import ProgressiveImage from "./ProgressiveImage";
 import imageLinkGenerator from "./../utilities/imageLinkGenerator";
@@ -22,9 +22,9 @@ const ProductInCartHorizentalCard = ({ product }) => {
     >
       {product.image ? (
         <ProgressiveImage
-          source={{ uri: imageLinkGenerator(product.image, "webp", 200, 200) }}
+          source={{ uri: imageLinkGenerator(product.image, "jpg", 200, 200) }}
           thumbnailSource={{
-            uri: imageLinkGenerator(product.image, "webp", 100, 100),
+            uri: imageLinkGenerator(product.image, "jpg", 100, 100),
           }}
           style={{ width: 100, height: 100 }}
           resizeMode="contain"

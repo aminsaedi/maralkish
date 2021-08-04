@@ -2,14 +2,14 @@ import { baseURL } from "../api/client";
 
 const imageLinkGenerator = (
   image,
-  format = "webp",
+  format = "jpg",
   width,
   height,
   quality = 80
 ) => {
   // if(!image || !image.name) return ""
   // let fileName = image.name.split(".");
-  if(!image) return;
+  if (!image) return;
   let fileName = image.name.replace(
     `.${image.name.split(".")[image.name.split(".").length - 1]}`,
     ""

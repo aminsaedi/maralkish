@@ -47,7 +47,7 @@ const ProductCardForAddNewReview = ({
         {product.image ? (
           <ProgressiveImage
             source={{
-              uri: imageLinkGenerator(product.image, "webp", 300, 300),
+              uri: imageLinkGenerator(product.image, "jpg", 300, 300),
             }}
             style={{ width: "100%", height: "100%" }}
             resizeMode="contain"
