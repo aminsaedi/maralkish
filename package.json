@@ -73,7 +73,6 @@
     "react-navigation-collapsible": "^5.10.2",
     "react-timer-hook": "^3.0.4",
     "rn-range-slider": "^2.0.4",
-    "sentry-expo": "^4.0.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {

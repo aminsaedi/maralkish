@@ -7,7 +7,7 @@ export const apiGetCategories = (id = null) =>
     `/api/store/product-categories${id ? "/" + id : ""}?embed=properties`
   );
 
-export const apiSeach = (key = "", categoryId = null) =>
+export const apiSearch = (key = "", categoryId = null) =>
   client.get("/api/store/products", {
     params: {
       categoryId,
@@ -35,5 +35,5 @@ export const apiGetBankAccounts = () => client.get("api/store/bankAccounts");
 export const apiGetPaymentProviders = () =>
   client.get("/api/store/payment-providers");
 
-export const apiSendDevideInfo = (data) =>
-  client.post("/api/store/mobile/firstRun", { ...data });
+export const apiSendDeviceInfo = (data) =>
+  client.post("api/store/app-subscribers", { ...data });

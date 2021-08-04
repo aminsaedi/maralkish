@@ -212,7 +212,7 @@ const Account = ({ navigation, route }) => {
               const otpTime = moment(otpResult.data.expireTime);
               const nowTime = moment();
               setOtpExpireTime(otpTime.diff(nowTime, "seconds"));
-              console.log(otpTime.diff(nowTime, "seconds"));
+              // console.log(otpTime.diff(nowTime, "seconds"));
               // const intervalId = setInterval(() => {
               //   // if (otpExpireTime > 1) setOtpExpireTime(otpExpireTime - 1);
               //   // else if (otpExpireTime <= 0) clearInterval(intervalId);
@@ -479,7 +479,7 @@ const Account = ({ navigation, route }) => {
 
   if (user && apiResult)
     return (
-      <AppView topSafe >
+      <AppView topSafe>
         <ScrollView
           refreshControl={
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />

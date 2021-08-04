@@ -49,11 +49,11 @@ const Home = ({ navigation }) => {
   ];
 
   return (
-    <AppView>
+    <AppView topSafe>
       <HomeSearchBar />
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{ height: "91%" }}
+        style={{ height: "92%" }}
       >
         <TopSlideShow />
         <SpecialOffers style={{ marginBottom: 20 }} />

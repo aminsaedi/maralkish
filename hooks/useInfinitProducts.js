@@ -83,7 +83,9 @@ const useInfinitProducts = (
                   ? {}
                   : { maxPrice: userMaxPrice }
                 : {}),
-                ...(selectedFilters && selectedFilters.length > 0 ? {...filterObj} : {})
+              ...(selectedFilters && selectedFilters.length > 0
+                ? { ...filterObj }
+                : {}),
               // ...(selectedFilters.length > 0
               //   ? selectedFilters.length === 1
               //     ? { filters: selectedFilters[0] }
@@ -96,7 +98,7 @@ const useInfinitProducts = (
           setProducts(newProducts.data);
           // TODO: fire scroll to top
         } else if (!filtersUpdated) {
-          console.log("Folters Nottt updated");
+          console.log("Filters Not updated");
           newProducts = await loadInfinitProducts(
             categoryId,
             page,
@@ -105,29 +107,29 @@ const useInfinitProducts = (
             {
               ...(currentCategory
                 ? currentCategory.minProductPrice === userMinPrice
-                ? {}
-                : { minPrice: userMinPrice }
+                  ? {}
+                  : { minPrice: userMinPrice }
                 : {}),
-                ...(currentCategory
-                  ? currentCategory.maxProductPrice === userMaxPrice
+              ...(currentCategory
+                ? currentCategory.maxProductPrice === userMaxPrice
                   ? {}
                   : { maxPrice: userMaxPrice }
-                  : {}),
-                }
-                // options,
-                // selectedFilters
-                );
-                setProducts((oldProducts) => [...oldProducts, ...newProducts.data]);
-              }
-              // setLowLoading(false);
-              
-              // set the should fetch call to false to prevent fetching
-              // on page number update
-              setShouldFetch(false);
-              
-              setFiltersUpdated(false);
-              if (page === 1) setTotalItems(newProducts.headers["x-total-records"]);
-              
+                : {}),
+            }
+            // options,
+            // selectedFilters
+          );
+          setProducts((oldProducts) => [...oldProducts, ...newProducts.data]);
+        }
+        // setLowLoading(false);
+
+        // set the should fetch call to false to prevent fetching
+        // on page number update
+        setShouldFetch(false);
+
+        setFiltersUpdated(false);
+        if (page === 1) setTotalItems(newProducts.headers["x-total-records"]);
+
         //increment page for the next call
         setPage(page + 1);
       };

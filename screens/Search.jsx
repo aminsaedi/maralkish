@@ -19,7 +19,7 @@ import SearchHistoryItem from "./../components/SearchHistoryItems";
 import colors from "../utilities/colors";
 
 // apis import
-import { apiSeach } from "../api/util";
+import { apiSearch } from "../api/util";
 import ProductHorizentalItem from "../components/ProductHorizentalItem";
 import pages from "./../navigation/routes";
 import Line from "../components/Line";
@@ -47,7 +47,7 @@ const Search = ({ navigation, route }) => {
   const handleSearch = async (key) => {
     setLoading(true);
     try {
-      const result = await apiSeach(key || searchString);
+      const result = await apiSearch(key || searchString);
       if (result.status === 200) setResults(result.data);
       setLoading(false);
     } catch (error) {

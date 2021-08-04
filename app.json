@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "مارال کیش",
+    "name": "maralkish",
     "slug": "maralkish",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -17,7 +17,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.mapsabad.profishop",
+      "bundleIdentifier": "com.maralkish.profishop",
       "buildNumber": "1.0.0"
     },
     "android": {
@@ -25,7 +25,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#f97c00"
       },
-      "package": "com.mapsabad.profishop",
+      "package": "com.maralkish.profishop",
       "versionCode": 1,
       "intentFilters": [
         {
@@ -33,7 +33,7 @@
           "data": [
             {
               "scheme": "https",
-              "host": "saedi.profishop.ir",
+              "host": "maralkish.ir",
               "pathPrefix": "/"
             }
           ],
@@ -43,12 +43,16 @@
       "googleServicesFile": "./google-services.json",
       "config": {
         "googleMaps": { "apiKey": "AIzaSyB16K40VOs7M3-qujlidYqTThUIiW7YSdA" }
-      }
+      },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "VIBRATE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["sentry-expo"],
     "scheme": "profishop"
   }
 }

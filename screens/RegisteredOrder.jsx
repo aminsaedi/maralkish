@@ -127,7 +127,7 @@ const RegisteredOrder = ({ navigation, route }) => {
         ]
       );
     } else if (activeMethod.id === 2) {
-      return Linking.openURL("https://saedi.profishop.ir");
+      return Linking.openURL("https://maralkish.ir");
     } else if (activeMethod.id === 1) return navigation.navigate(pages.home);
   };
 

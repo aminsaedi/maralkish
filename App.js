@@ -6,7 +6,6 @@ import { Platform } from "react-native";
 import { useFonts } from "expo-font";
 import * as Linking from "expo-linking";
 import * as Notifications from "expo-notifications";
-import * as Sentry from "sentry-expo";
 import * as Updates from "expo-updates";
 import * as Device from "expo-device";
 import AppLoading from "expo-app-loading";
@@ -26,12 +25,6 @@ import {
   handleForegroundNotifications,
 } from "./utilities/notificationHandler";
 import sendDeviceInfo from "./utilities/sendDeviceInfo";
-
-Sentry.init({
-  dsn: "https://2a7267c8d3464317ad9e63deddd889f4@o499970.ingest.sentry.io/5828353",
-  enableInExpoDevelopment: true,
-  debug: false, // Sentry will try to print out useful debugging information if something goes wrong with sending an event. Set this to `false` in production.
-});
 
 export default function App() {
   const lastNotificationResponse = Notifications.useLastNotificationResponse();
@@ -75,7 +68,7 @@ export default function App() {
         }
       }
     } else if (cartId) {
-      console.log("Restoring cart : ", cartId);
+      // console.log("Restoring cart : ", cartId);
       // setCart(null);
       const getCartApiResult = await apiGetCart(cartId);
       if (getCartApiResult.status === 200) {
@@ -103,7 +96,7 @@ export default function App() {
         await Updates.reloadAsync();
       }
     } catch (e) {
-      console.log(e);
+      // console.log(es);
       // alert("خطا در بروزرسانی برنامه");
       // handle or log error
     }
@@ -186,7 +179,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    console.log(lastNotificationResponse);
+    // console.log(lastNotificationResponse);
     if (
       lastNotificationResponse &&
       lastNotificationResponse.notification.request.content &&
@@ -222,7 +215,7 @@ export default function App() {
   const prefix = Linking.createURL("/");
 
   const linking = {
-    prefixes: ["https://saedi.profishop.ir", prefix],
+    prefixes: ["https://maralkish.ir", prefix],
     // prefixes: [prefix],
     config: {
       screens: {

@@ -159,7 +159,7 @@ const AddAddress = ({ navigation, route }) => {
       }
     } catch (error) {
       setButtonLoading(false);
-      console.log(error);
+      // console.log(error);
     }
   };
 

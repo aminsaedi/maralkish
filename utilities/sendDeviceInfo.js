@@ -1,7 +1,9 @@
-import { apiSendDevideInfo } from "../api/util";
+import { apiSendDeviceInfo } from "../api/util";
+import { Platform } from "react-native";
 
 const sendDeviceInfo = async (token, Device) => {
   const {
+    isDevice,
     brand,
     manufacturer,
     modelId,
@@ -17,22 +19,28 @@ const sendDeviceInfo = async (token, Device) => {
     deviceName,
   } = Device;
   const deviceType = await Device.getDeviceTypeAsync();
-  apiSendDevideInfo({
-    brand,
-    manufacturer,
-    modelId,
-    designName,
-    deviceYearClass,
-    totalMemory,
-    supportedCpuArchitectures,
-    osName,
-    osVersion,
-    osBuildId,
-    osBuildFingerprint,
-    platformApiLevel,
-    deviceName,
-    deviceType,
-    token,
+  apiSendDeviceInfo({
+    subscriber: {
+      providerType: Platform.OS === "android" ? "firebase" : "apn",
+      uniqueId: token,
+    },
+    device: {
+      isDevice,
+      brand,
+      manufacturer,
+      modelId,
+      designName,
+      deviceYearClass,
+      totalMemory,
+      supportedCpuArchitectures,
+      osName,
+      osVersion,
+      osBuildId,
+      osBuildFingerprint,
+      platformApiLevel,
+      deviceName,
+      deviceType,
+    },
   })
     .then((response) => console.log(response))
     .catch((error) => console.log(error));

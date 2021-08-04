@@ -173,10 +173,10 @@ const LoginModal = ({ visible, onRequestClose, onFinish }) => {
   };
 
   const handleRegister = async (values, { resetForm }) => {
-    console.log(
-      "handleRegister",
-      isAuthenticationRequiredOnRegister === true ? " with otp" : "without otp"
-    );
+    // console.log(
+    //   "handleRegister",
+    //   isAuthenticationRequiredOnRegister === true ? " with otp" : "without otp"
+    // );
     setRegisterMetaData(values);
     if (isAuthenticationRequiredOnRegister === true) {
       setLoading(true);
@@ -193,7 +193,7 @@ const LoginModal = ({ visible, onRequestClose, onFinish }) => {
         } else {
           setLoading(false);
           alert("خطایی رخ داد");
-          console.log(error.response.data);
+          // console.log(error.response.data);
         }
       }
     } else {
@@ -208,17 +208,17 @@ const LoginModal = ({ visible, onRequestClose, onFinish }) => {
           Alert.alert("خطا در ثبت نام");
         }
       } catch (error) {
-        console.log(error.response?.data)
-        alert(error.response?.data.toString() || error);
+        // console.log(error.response?.data);
+        // alert(error.response?.data.toString() || error);
       }
     }
   };
 
   const handleRegisterWithOtp = async (values, { resetForm }) => {
-    console.log("handleRegisterWithOtp", {
-      ...registerMetaData,
-      ...{ otp: values.otp },
-    });
+    // console.log("handleRegisterWithOtp", {
+    //   ...registerMetaData,
+    //   ...{ otp: values.otp },
+    // });
     try {
       const result = await apiRegisterUser({
         ...registerMetaData,
@@ -233,7 +233,7 @@ const LoginModal = ({ visible, onRequestClose, onFinish }) => {
         Alert.alert("خطا در ثبت نام");
       }
     } catch (error) {
-      console.log(error.response.data.toString());
+      // console.log(error.response.data.toString());
       alert(error.response?.data?.toString() || error);
     }
   };

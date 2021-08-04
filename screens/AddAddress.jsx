@@ -158,7 +158,7 @@ const AddAddress = ({ navigation, route }) => {
       }
     } catch (error) {
       setButtonLoading(false);
-      console.log(error.response?.data);
+      // console.log(error.response?.data);
     }
   };
 
@@ -184,7 +184,7 @@ const AddAddress = ({ navigation, route }) => {
           onPress={() => setShowSearchLocationModal(true)}
         >
           <Text style={styles.lightText}>جستجو</Text>
-          <TouchableOpacity onPress={() => navigation.goBack()} >
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <MaterialCommunityIcons name="arrow-right" size={20} />
           </TouchableOpacity>
         </TouchableOpacity>

@@ -20,11 +20,11 @@ const HomeSearchBar = () => {
   return (
     <View
       style={{
-        height: "9%",
+        height: "8%",
         width: "100%",
         borderBottomColor: colors.lightGray,
         borderBottomWidth: 1,
-        marginTop: getStatusBarHeight(),
+        // marginTop: getStatusBarHeight(),
         // shadowColor: "#000",
         // shadowOffset: {
         //   width: 0,
@@ -39,7 +39,7 @@ const HomeSearchBar = () => {
       <TouchableOpacity
         style={{
           flex: 1,
-          marginVertical: 7,
+          marginVertical: 4,
           marginHorizontal: 10,
           backgroundColor: colors.inputBackgroundColor,
           borderRadius: 10,

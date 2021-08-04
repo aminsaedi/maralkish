@@ -1,6 +1,5 @@
 import React from "react";
 import { View, StyleSheet, Animated } from "react-native";
-import * as Sentry from "sentry-expo";
 
 const styles = StyleSheet.create({
   imageOverlay: {
@@ -23,7 +22,7 @@ class ProgressiveImage extends React.Component {
   handleThumbnailLoad = () => {
     Animated.timing(this.thumbnailAnimated, {
       toValue: 1,
-      useNativeDriver : false
+      useNativeDriver: false,
     }).start();
   };
 
