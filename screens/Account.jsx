@@ -734,9 +734,27 @@ const Account = ({ navigation, route }) => {
                       lineHeight: 20,
                     }}
                   >
-                    با ورود و یا ثبت نام در {storeName} شما شرایط و قوانین
-                    استفاده ار سرویس های سایت {storeName} و قوانین حریم خصوصی آن
-                    را میپذیرید
+                    با ورود و یا ثبت نام در {storeName}{" "}
+                    <Text
+                      style={{
+                        fontFamily: "primary",
+                        color: colors.seconadryColor,
+                      }}
+                      onPress={() => navigation.navigate(pages.termOfUse)}
+                    >
+                      شما شرایط و قوانین{" "}
+                    </Text>
+                    استفاده از سرویس های سایت {storeName} و{" "}
+                    <Text
+                      style={{
+                        fontFamily: "primary",
+                        color: colors.seconadryColor,
+                      }}
+                      onPress={() => navigation.navigate(pages.privacy)}
+                    >
+                      قوانین حریم خصوصی
+                    </Text>{" "}
+                    آن را میپذیرید
                   </Text>
                 </View>
               </View>
