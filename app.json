@@ -2,7 +2,7 @@
   "expo": {
     "name": "maralkish",
     "slug": "maralkish",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -29,7 +29,7 @@
         "backgroundColor": "#f97c00"
       },
       "package": "com.maralkish.profishop",
-      "versionCode": 3,
+      "versionCode": 4,
       "intentFilters": [
         {
           "action": "VIEW",
