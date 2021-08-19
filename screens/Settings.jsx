@@ -48,7 +48,7 @@ const Settings = () => {
       name: "شرایط استفاده",
       icon: "document-text-outline",
       mode: "link",
-      page : pages.termOfUse
+      page: pages.termOfUse,
     },
     {
       id: 4,
@@ -64,13 +64,13 @@ const Settings = () => {
       mode: "link",
       page: pages.contactUs,
     },
-    {
-      id: 6,
-      name: `امتیاز به ${storeStettings.faName || "فروشگاه"}`,
-      icon: "star-outline",
-      mode: "link",
-      link: "https://google.com",
-    },
+    // {
+    //   id: 6,
+    //   name: `امتیاز به ${storeStettings.faName || "فروشگاه"}`,
+    //   icon: "star-outline",
+    //   mode: "link",
+    //   link: "https://google.com",
+    // },
   ];
 
   if (user) {
