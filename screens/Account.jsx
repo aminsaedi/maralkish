@@ -313,6 +313,9 @@ const Account = ({ navigation, route }) => {
       try {
         const otpResult = await apiSendOtp({ username: values.mobile });
         if (otpResult.status === 200) {
+          const otpTime = moment(otpResult.data.expireTime);
+          const nowTime = moment();
+          setOtpExpireTime(otpTime.diff(nowTime, "seconds"));
           setLoading(false);
           return setLoginStep("registerOtp");
         }

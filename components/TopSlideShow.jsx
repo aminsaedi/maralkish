@@ -16,8 +16,7 @@ const TopSlideShow = () => {
         return setSlideshows(result.data.slides);
       }
     } catch (error) {
-      setLoading(false)
-      if (error.response.status === 404) return setLoading(false);
+      setLoading(false);
     }
   };
   const windowWidth = Dimensions.get("window").width;
@@ -28,11 +27,18 @@ const TopSlideShow = () => {
 
   if (loading) {
     return (
-      <View style={{ width: windowWidth, height: 180, marginTop: 25,marginBottom : 50 }}></View>
+      <View
+        style={{
+          width: windowWidth,
+          height: 180,
+          marginTop: 25,
+          marginBottom: 50,
+        }}
+      ></View>
     );
   }
 
-  if (slideshows)
+  if (slideshows && slideshows.length > 0)
     return (
       <Carousel
         data={slideshows}

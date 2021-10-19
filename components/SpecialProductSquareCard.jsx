@@ -50,7 +50,7 @@ const SpecialProductSquareCard = ({ product }) => {
         style={{
           width: "100%",
           height: "50%",
-          paddingLeft: "2.5%",
+          paddingLeft : "2.5%"
           // display: "flex",
           // alignItems: "center",
           // justifyContent: "center",

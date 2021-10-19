@@ -15,17 +15,17 @@ const Translator = ({ route, navigation }) => {
   const localTeranlator = async () => {
     const data = await Linking.getInitialURL();
     if (data) {
-      if (data.toString() === "https://maralkish.ir/myAccount") {
+      if (data.toString() === "https://gooldshop.ir/myAccount") {
         setLoading(false);
         navigation.popToTop();
         return navigation.navigate(pages.app, {
           screen: pages.myAccount,
         });
-      } else if (data === "https://maralkish.ir/home") {
+      } else if (data === "https://gooldshop.ir/home") {
         setLoading(false);
         navigation.popToTop();
         return navigation.push(pages.app, { screen: pages.home });
-      } else if (data === "https://maralkish.ir/orderDetail") {
+      } else if (data === "https://gooldshop.ir/orderDetail") {
         setLoading(false);
         const trackingId = data.split("/")[data.split("/").length - 1];
         navigation.popToTop();

@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { View, Text, Image, TouchableOpacity, Linking } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Linking,
+  Platform,
+} from "react-native";
 import AppInput from "./../components/Form/AppInput";
 import AppButton from "./../components/Form/AppButton";
 import * as yup from "yup";
@@ -75,6 +82,7 @@ const ContactUs = ({ navigation, route }) => {
               color: colors.secondaryTextColor,
               lineHeight: 25,
               marginVertical: 15,
+              textAlign: "right",
             }}
           >
             شما میتوانید با تکمیل این فرم با بخش پشتیبانی فروشگاه در تماس باشید
@@ -85,6 +93,7 @@ const ContactUs = ({ navigation, route }) => {
               fontFamily: "primary",
               lineHeight: 22,
               color: colors.secondaryTextColor,
+              textAlign: "right",
             }}
           >
             همچنین میتوانید با روش های زیر به طور مستقیم با{" "}
@@ -98,6 +107,7 @@ const ContactUs = ({ navigation, route }) => {
                 style={{
                   fontFamily: "primary",
                   color: colors.secondaryTextColor,
+                  textAlign: "right",
                 }}
               >
                 شماره تلفن :{" "}
@@ -115,6 +125,7 @@ const ContactUs = ({ navigation, route }) => {
                 style={{
                   fontFamily: "primary",
                   color: colors.secondaryTextColor,
+                  textAlign: "right",
                 }}
               >
                 شماره موبایل :{" "}
@@ -132,11 +143,43 @@ const ContactUs = ({ navigation, route }) => {
                 style={{
                   fontFamily: "primary",
                   color: colors.secondaryTextColor,
+                  textAlign: "right",
                 }}
               >
                 آدرس ایمیل :{" "}
                 <Text style={{ color: colors.seconadryColor }}>
                   {storeSetting.email}
+                </Text>
+              </Text>
+            </TouchableOpacity>
+          )}
+          {storeSetting.address && storeSetting.latitude && (
+            <TouchableOpacity
+              onPress={() => {
+                const scheme = Platform.select({
+                  ios: "maps:0,0?q=",
+                  android: "geo:0,0?q=",
+                });
+                const latLng = `${storeSetting.latitude},${storeSetting.longitude}`;
+                const label = "Store Address";
+                const url = Platform.select({
+                  ios: `${scheme}${label}@${latLng}`,
+                  android: `${scheme}${latLng}(${label})`,
+                });
+
+                Linking.openURL(url);
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "primary",
+                  color: colors.secondaryTextColor,
+                  textAlign: "right",
+                }}
+              >
+                آدرس فروشگاه :{" "}
+                <Text style={{ color: colors.seconadryColor }}>
+                  {storeSetting.address}
                 </Text>
               </Text>
             </TouchableOpacity>

@@ -50,7 +50,7 @@ const CategoriesNavigator = () => {
                   />
                 </TouchableOpacity>
                 <TouchableOpacity
-                  style={{ width: "80%", marginRight: 15 }}
+                  style={{ width: "80%", marginRight: 5 }}
                   onPress={() => navigation.navigate(pages.search)}
                 >
                   <Text

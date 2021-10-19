@@ -1,54 +1,149 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Image,
   View,
   TouchableWithoutFeedback,
   StyleSheet,
   Dimensions,
+  Linking,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const Banner = ({ count = 1, data = [] }) => {
-  if (count === 1)
+import { apiGetFourBanner, apiGetOneBanner } from "../api/banner";
+import { baseURL } from "../api/client";
+import pages from "../navigation/routes";
+
+const Banner = ({ four = false }) => {
+  const navigation = useNavigation();
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(false);
+  const handleGetOneBanner = async () => {
+    try {
+      setLoading(true);
+      const result = await apiGetOneBanner();
+      if (result.status === 200) {
+        setData(result.data);
+        setLoading(false);
+      }
+    } catch (error) {
+      setLoading(false);
+    }
+  };
+  const handleGetFourLoading = async () => {
+    try {
+      setLoading(true);
+      const result = await apiGetFourBanner();
+      if (result.status === 200) {
+        setData(result.data);
+        setLoading(false);
+      }
+    } catch (error) {
+      setLoading(false);
+    }
+  };
+  const handlePressOnItem = (slide) => {
+    // console.log(slide);
+    if (!slide) return;
+    if (slide.anchorType) {
+      switch (slide.anchorType) {
+        case "product":
+          navigation.push(pages.product, {
+            productId: slide.typeId,
+          });
+          break;
+        case "collection":
+          navigation.push(pages.app, {
+            screen: pages.catagories,
+            params: {
+              screen: pages.subCategories,
+              params: {
+                categoryId: slide.typeId,
+              },
+            },
+          });
+          break;
+        default:
+          break;
+      }
+    } else if (!slide.anchorType && slide.href) {
+      Linking.openURL(slide.href);
+    }
+  };
+  useEffect(() => {
+    if (!four) {
+      handleGetOneBanner();
+    } else if (four) handleGetFourLoading();
+  }, []);
+  if (!four && data)
     return (
       <View style={styles.oneItemContainer}>
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          onPress={() => handlePressOnItem(data.slides[0])}
+        >
           <Image
-            style={{ height: "100%", width: "100%", borderRadius: 15 }}
+            style={{
+              height: "100%",
+              width: "100%",
+              borderRadius: 15,
+              // backgroundColor: "red",
+            }}
             resizeMode="cover"
             source={
-              data[0]?.image
-                ? { uri: data[0].image }
+              data.slides[0]?.address
+                ? {
+                    uri:
+                      baseURL +
+                      data.slides[0].address +
+                      "/" +
+                      data.slides[0].name,
+                  }
                 : require("../assets/default.jpg")
             }
           />
         </TouchableWithoutFeedback>
       </View>
     );
-  else if (count === 4)
+  else if (four && data)
     return (
       <View style={styles.fourItemContainer}>
         <View style={styles.fourRowContainer}>
           <View style={styles.fourImageContainer}>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={() => handlePressOnItem(data.slides[0])}
+            >
               <Image
                 style={{ height: "100%", width: "100%", borderRadius: 15 }}
                 resizeMode="cover"
                 source={
-                  data[0]?.image
-                    ? { uri: data[0].image }
+                  data.slides[0]?.address
+                    ? {
+                        uri:
+                          baseURL +
+                          data.slides[0].address +
+                          "/" +
+                          data.slides[0].name,
+                      }
                     : require("../assets/default.jpg")
                 }
               />
             </TouchableWithoutFeedback>
           </View>
           <View style={styles.fourImageContainer}>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={() => handlePressOnItem(data.slides[1])}
+            >
               <Image
                 style={{ height: "100%", width: "100%", borderRadius: 15 }}
                 resizeMode="cover"
                 source={
-                  data[1]?.image
-                    ? { uri: data[1].image }
+                  data.slides[1]?.address
+                    ? {
+                        uri:
+                          baseURL +
+                          data.slides[1].address +
+                          "/" +
+                          data.slides[1].name,
+                      }
                     : require("../assets/default.jpg")
                 }
               />
@@ -57,26 +152,42 @@ const Banner = ({ count = 1, data = [] }) => {
         </View>
         <View style={styles.fourRowContainer}>
           <View style={styles.fourImageContainer}>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={() => handlePressOnItem(data.slides[2])}
+            >
               <Image
                 style={{ height: "100%", width: "100%", borderRadius: 15 }}
                 resizeMode="cover"
                 source={
-                  data[2]?.image
-                    ? { uri: data[2].image }
+                  data.slides[2]?.address
+                    ? {
+                        uri:
+                          baseURL +
+                          data.slides[2].address +
+                          "/" +
+                          data.slides[2].name,
+                      }
                     : require("../assets/default.jpg")
                 }
               />
             </TouchableWithoutFeedback>
           </View>
           <View style={styles.fourImageContainer}>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={() => handlePressOnItem(data.slides[3])}
+            >
               <Image
                 style={{ height: "100%", width: "100%", borderRadius: 15 }}
                 resizeMode="cover"
                 source={
-                  data[3]?.image
-                    ? { uri: data[3].image }
+                  data.slides[3]?.address
+                    ? {
+                        uri:
+                          baseURL +
+                          data.slides[3].address +
+                          "/" +
+                          data.slides[3].name,
+                      }
                     : require("../assets/default.jpg")
                 }
               />
@@ -85,6 +196,7 @@ const Banner = ({ count = 1, data = [] }) => {
         </View>
       </View>
     );
+  else return null;
 };
 
 const styles = StyleSheet.create({
@@ -102,6 +214,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    marginVertical: 10,
   },
   fourRowContainer: {
     display: "flex",

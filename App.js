@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { apiCreateCart, apiGetCart } from "./api/cart";
 import { getCartId, setCartId } from "./cart/cartStorage";
-import { Platform } from "react-native";
+import { Platform, I18nManager } from "react-native";
 import { useFonts } from "expo-font";
 import * as Linking from "expo-linking";
 import * as Notifications from "expo-notifications";
@@ -184,7 +184,7 @@ export default function App() {
       lastNotificationResponse &&
       lastNotificationResponse.notification.request.content &&
       lastNotificationResponse.actionIdentifier ===
-        Notifications.DEFAULT_ACTION_IDENTIFIER &&
+      Notifications.DEFAULT_ACTION_IDENTIFIER &&
       navigationRef &&
       navigationRef.current
     ) {
@@ -215,7 +215,7 @@ export default function App() {
   const prefix = Linking.createURL("/");
 
   const linking = {
-    prefixes: ["https://maralkish.ir", prefix],
+    prefixes: ["https://gooldshop.ir", prefix],
     // prefixes: [prefix],
     config: {
       screens: {
@@ -250,6 +250,12 @@ export default function App() {
   };
 
   // console.log(storeSetting)
+
+  try {
+    I18nManager.allowRTL(false);
+  } catch (error) {
+    console.log(error);
+  }
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>

@@ -124,7 +124,7 @@ const SpecialProductCard = ({ product }) => {
                   fontFamily: "primary",
                   color: colors.white,
                   fontSize: 12,
-                  letterSpacing: 2,
+                  letterSpacing : 2
                 }}
               >
                 {Math.round(

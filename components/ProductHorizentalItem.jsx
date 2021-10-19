@@ -59,8 +59,8 @@ const ProductHorizentalItem = ({ product }) => {
           // backgroundColor: "red",
         }}
       >
-        <View style={{ width: "70%", height: "100%" }}>
-          <View style={{ width: "100%", height: "40%" }}>
+        <View style={{ width: "70%", height: "100%", }}>
+          <View style={{ width: "100%", height: "40%", }}>
             <Text
               style={{
                 fontFamily: "primaryBold",
@@ -129,7 +129,7 @@ const ProductHorizentalItem = ({ product }) => {
               height: "35%",
               display: "flex",
               flexDirection: "row",
-              alignItems: "center",
+              alignItems : "center",
               justifyContent: "space-between",
               // backgroundColor : "purple"
             }}
@@ -139,8 +139,8 @@ const ProductHorizentalItem = ({ product }) => {
                 width: "40%",
                 height: "100%",
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                alignItems : "center",
+                justifyContent : "center",
                 flexDirection: "row",
                 // backgroundColor : "red"
               }}
@@ -235,7 +235,7 @@ const ProductHorizentalItem = ({ product }) => {
             )}
           </View>
         </View>
-        <View style={{ flex: 1 }}>
+        <View style={{ flex : 1, }}>
           <View style={{ width: "100%", height: "80%" }}>
             {product.image ? (
               <ProgressiveImage

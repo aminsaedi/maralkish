@@ -121,226 +121,250 @@ const MostProducts = ({ mode = "sales", style }) => {
               display: "flex",
             }}
           >
-            <TouchableOpacity
-              onPress={() =>
-                navigation.push(pages.product, { productId: item[0].id })
-              }
-              style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <View style={{ width: "60%", height: "100%", paddingRight: 10 }}>
-                <Text
-                  style={{
-                    fontFamily: "primary",
-                    color: colors.black,
-                    fontSize: 15,
-                    lineHeight: 27,
-                    textAlign: "right",
-                  }}
-                  numberOfLines={2}
-                >
-                  {item[0].name}
-                </Text>
-              </View>
-              <View
+            {item[0] && (
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.push(pages.product, { productId: item[0].id })
+                }
                 style={{
-                  width: "10%",
-                  height: "100%",
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "row",
                 }}
               >
-                <Text
+                <View
+                  style={{ width: "60%", height: "100%", paddingRight: 10 }}
+                >
+                  <Text
+                    style={{
+                      fontFamily: "primary",
+                      color: colors.black,
+                      fontSize: 15,
+                      lineHeight: 27,
+                      textAlign: "right",
+                    }}
+                    numberOfLines={2}
+                  >
+                    {item[0].name}
+                  </Text>
+                </View>
+                <View
                   style={{
-                    fontFamily: "primaryBold",
-                    fontSize: 35,
-                    color: colors.seconadryColor,
-                    textAlign: "center",
+                    width: "10%",
+                    height: "100%",
                   }}
                 >
-                  {numCalculator(index, 0)}
-                </Text>
-              </View>
-              <View
-                style={{
-                  width: "30%",
-                  height: "100%",
-                }}
-              >
-                {item[0].image ? (
-                  <ProgressiveImage
-                    source={{
-                      uri: imageLinkGenerator(item[0].image, "jpg", 300, 300),
+                  <Text
+                    style={{
+                      fontFamily: "primaryBold",
+                      fontSize: 35,
+                      color: colors.seconadryColor,
+                      textAlign: "center",
                     }}
-                    thumbnailSource={{
-                      uri: imageLinkGenerator(
-                        item[0].image,
-                        "jpg",
-                        150,
-                        150,
-                        50
-                      ),
-                    }}
-                    style={{ width: "100%", height: "100%" }}
-                    resizeMode="contain"
-                  />
-                ) : (
-                  <Image
-                    source={require("../assets/default.jpg")}
-                    style={{ width: "100%", height: "100%", borderRadius: 15 }}
-                    resizeMode="contain"
-                  />
-                )}
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() =>
-                navigation.push(pages.product, { productId: item[1].id })
-              }
-              style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <View style={{ width: "60%", height: "100%", paddingRight: 10 }}>
-                <Text
+                  >
+                    {numCalculator(index, 0)}
+                  </Text>
+                </View>
+                <View
                   style={{
-                    fontFamily: "primary",
-                    color: colors.black,
-                    fontSize: 15,
-                    lineHeight: 27,
-                    textAlign: "right",
-                  }}
-                  numberOfLines={2}
-                >
-                  {item[1].name}
-                </Text>
-              </View>
-              <View
-                style={{
-                  width: "10%",
-                  height: "100%",
-                }}
-              >
-                <Text
-                  style={{
-                    fontFamily: "primaryBold",
-                    fontSize: 35,
-                    color: colors.seconadryColor,
-                    textAlign: "center",
+                    width: "30%",
+                    height: "100%",
                   }}
                 >
-                  {numCalculator(index, 1)}
-                </Text>
-              </View>
-              <View
+                  {item[0].image ? (
+                    <ProgressiveImage
+                      source={{
+                        uri: imageLinkGenerator(item[0].image, "jpg", 300, 300),
+                      }}
+                      thumbnailSource={{
+                        uri: imageLinkGenerator(
+                          item[0].image,
+                          "jpg",
+                          150,
+                          150,
+                          50
+                        ),
+                      }}
+                      style={{ width: "100%", height: "100%" }}
+                      resizeMode="contain"
+                    />
+                  ) : (
+                    <Image
+                      source={require("../assets/default.jpg")}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: 15,
+                      }}
+                      resizeMode="contain"
+                    />
+                  )}
+                </View>
+              </TouchableOpacity>
+            )}
+            {item[1] && (
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.push(pages.product, { productId: item[1].id })
+                }
                 style={{
-                  width: "30%",
-                  height: "100%",
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "row",
                 }}
               >
-                {item[1].image ? (
-                  <ProgressiveImage
-                    source={{
-                      uri: imageLinkGenerator(item[1].image, "jpg", 300, 300),
+                <View
+                  style={{ width: "60%", height: "100%", paddingRight: 10 }}
+                >
+                  <Text
+                    style={{
+                      fontFamily: "primary",
+                      color: colors.black,
+                      fontSize: 15,
+                      lineHeight: 27,
+                      textAlign: "right",
                     }}
-                    thumbnailSource={{
-                      uri: imageLinkGenerator(
-                        item[1].image,
-                        "jpg",
-                        150,
-                        150,
-                        50
-                      ),
+                    numberOfLines={2}
+                  >
+                    {item[1].name}
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    width: "10%",
+                    height: "100%",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontFamily: "primaryBold",
+                      fontSize: 35,
+                      color: colors.seconadryColor,
+                      textAlign: "center",
                     }}
-                    style={{ width: "100%", height: "100%" }}
-                    resizeMode="contain"
-                  />
-                ) : (
-                  <Image
-                    source={require("../assets/default.jpg")}
-                    style={{ width: "100%", height: "100%", borderRadius: 15 }}
-                    resizeMode="contain"
-                  />
-                )}
-              </View>
-            </TouchableOpacity>
+                  >
+                    {numCalculator(index, 1)}
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    width: "30%",
+                    height: "100%",
+                  }}
+                >
+                  {item[1].image ? (
+                    <ProgressiveImage
+                      source={{
+                        uri: imageLinkGenerator(item[1].image, "jpg", 300, 300),
+                      }}
+                      thumbnailSource={{
+                        uri: imageLinkGenerator(
+                          item[1].image,
+                          "jpg",
+                          150,
+                          150,
+                          50
+                        ),
+                      }}
+                      style={{ width: "100%", height: "100%" }}
+                      resizeMode="contain"
+                    />
+                  ) : (
+                    <Image
+                      source={require("../assets/default.jpg")}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: 15,
+                      }}
+                      resizeMode="contain"
+                    />
+                  )}
+                </View>
+              </TouchableOpacity>
+            )}
 
-            <TouchableOpacity
-              onPress={() =>
-                navigation.push(pages.product, { productId: item[2].id })
-              }
-              style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <View style={{ width: "60%", height: "100%", paddingRight: 10 }}>
-                <Text
-                  style={{
-                    fontFamily: "primary",
-                    color: colors.black,
-                    fontSize: 15,
-                    lineHeight: 27,
-                    textAlign: "right",
-                  }}
-                  numberOfLines={2}
-                >
-                  {item[2].name}
-                </Text>
-              </View>
-              <View
+            {item[2] && (
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.push(pages.product, { productId: item[2].id })
+                }
                 style={{
-                  width: "10%",
-                  height: "100%",
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "row",
                 }}
               >
-                <Text
+                <View
+                  style={{ width: "60%", height: "100%", paddingRight: 10 }}
+                >
+                  <Text
+                    style={{
+                      fontFamily: "primary",
+                      color: colors.black,
+                      fontSize: 15,
+                      lineHeight: 27,
+                      textAlign: "right",
+                    }}
+                    numberOfLines={2}
+                  >
+                    {item[2].name}
+                  </Text>
+                </View>
+                <View
                   style={{
-                    fontFamily: "primaryBold",
-                    fontSize: 35,
-                    color: colors.seconadryColor,
-                    textAlign: "center",
+                    width: "10%",
+                    height: "100%",
                   }}
                 >
-                  {numCalculator(index, 2)}
-                </Text>
-              </View>
-              <View
-                style={{
-                  width: "30%",
-                  height: "100%",
-                }}
-              >
-                {item[2].image ? (
-                  <ProgressiveImage
-                    source={{
-                      uri: imageLinkGenerator(item[2].image, "jpg", 300, 300),
+                  <Text
+                    style={{
+                      fontFamily: "primaryBold",
+                      fontSize: 35,
+                      color: colors.seconadryColor,
+                      textAlign: "center",
                     }}
-                    thumbnailSource={{
-                      uri: imageLinkGenerator(
-                        item[2].image,
-                        "jpg",
-                        150,
-                        150,
-                        50
-                      ),
-                    }}
-                    style={{ width: "100%", height: "100%" }}
-                    resizeMode="contain"
-                  />
-                ) : (
-                  <Image
-                    source={require("../assets/default.jpg")}
-                    style={{ width: "100%", height: "100%", borderRadius: 15 }}
-                    resizeMode="contain"
-                  />
-                )}
-              </View>
-            </TouchableOpacity>
+                  >
+                    {numCalculator(index, 2)}
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    width: "30%",
+                    height: "100%",
+                  }}
+                >
+                  {item[2].image ? (
+                    <ProgressiveImage
+                      source={{
+                        uri: imageLinkGenerator(item[2].image, "jpg", 300, 300),
+                      }}
+                      thumbnailSource={{
+                        uri: imageLinkGenerator(
+                          item[2].image,
+                          "jpg",
+                          150,
+                          150,
+                          50
+                        ),
+                      }}
+                      style={{ width: "100%", height: "100%" }}
+                      resizeMode="contain"
+                    />
+                  ) : (
+                    <Image
+                      source={require("../assets/default.jpg")}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: 15,
+                      }}
+                      resizeMode="contain"
+                    />
+                  )}
+                </View>
+              </TouchableOpacity>
+            )}
           </View>
         )}
       />

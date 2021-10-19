@@ -127,7 +127,7 @@ const RegisteredOrder = ({ navigation, route }) => {
         ]
       );
     } else if (activeMethod.id === 2) {
-      return Linking.openURL("https://maralkish.ir");
+      return Linking.openURL("https://gooldshop.ir");
     } else if (activeMethod.id === 1) return navigation.navigate(pages.home);
   };
 

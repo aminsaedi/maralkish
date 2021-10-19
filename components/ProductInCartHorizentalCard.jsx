@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text, Image } from "react-native";
+import { TouchableOpacity, Text,Image } from "react-native";
 
 import ProgressiveImage from "./ProgressiveImage";
 import imageLinkGenerator from "./../utilities/imageLinkGenerator";

@@ -85,7 +85,7 @@ const Product = ({ navigation, route }) => {
         navigation.goBack();
         alert("محصول مورد نظر یافت نشد");
         return;
-      } else return alert("خطا در نمایش محصول");
+      } else return alert("خطا در نمایش محصول")
     }
   };
 
@@ -454,10 +454,7 @@ const Product = ({ navigation, route }) => {
         }
         {properties && properties.length > 0 && (
           <View
-            style={[
-              styles.sectionContainer,
-              { paddingTop: 10, marginTop: 5, paddingHorizontal: 15 },
-            ]}
+            style={[styles.sectionContainer, { paddingTop: 10, marginTop: 5,paddingHorizontal : 15 }]}
           >
             <Text
               style={{
@@ -502,13 +499,12 @@ const Product = ({ navigation, route }) => {
                       paddingVertical: 5,
                       textAlign: "right",
                       color: colors.black,
-                      lineHeight: 24,
-                      paddingLeft: 15,
-                      marginLeft: 15,
-                      paddingRight: 20,
+                      lineHeight : 24,
+                      paddingLeft : 15,marginLeft : 15,
+                      paddingRight:20
                     }}
                   >
-                    {item.values + " "}
+                    {item.values +" "}
                   </Text>
                 </Text>
               </React.Fragment>

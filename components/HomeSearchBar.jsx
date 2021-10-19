@@ -47,14 +47,14 @@ const HomeSearchBar = () => {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "flex-end",
-          paddingRight: 10,
+          paddingRight: 6,
         }}
         onPress={() => navigation.navigate(pages.search)}
       >
         <Text
           style={{
             fontFamily: "primary",
-            fontSize: 18,
+            fontSize: 17,
             color: colors.inputPlaceholderColor,
             marginRight: 5,
           }}

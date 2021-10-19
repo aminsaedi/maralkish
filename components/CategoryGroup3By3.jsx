@@ -20,13 +20,7 @@ import pages from "../navigation/routes";
 // apis import
 import { apiGet9CategoryProduct } from "../api/products";
 
-const CategoryGroup3By3 = ({
-  categoryId,
-  style,
-  title,
-  products,
-  totalItems,
-}) => {
+const CategoryGroup3By3 = ({ categoryId, style, title, products,totalItems }) => {
   const [loading, setLoading] = useState(false);
 
   const navigation = useNavigation();

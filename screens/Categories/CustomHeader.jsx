@@ -21,8 +21,8 @@ const CustomHeader = ({
     <View
       style={{
         width: "100%",
-        height: 130,
-        paddingTop: getStatusBarHeight(),
+        height: 110,
+        paddingTop: getStatusBarHeight(true),
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -37,7 +37,7 @@ const CustomHeader = ({
           alignItems: "center",
           justifyContent: "flex-end",
           height: "42.5%",
-          marginTop : "2.5%",
+          marginTop: "2.5%",
           paddingHorizontal: 5,
           width: "95%",
           borderRadius: 10,

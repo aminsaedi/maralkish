@@ -7,7 +7,8 @@ import axiosRetry from "axios-retry";
 import authStorage from "../auth/storage";
 import { getNotificationToken } from "../utilities/notificationTokenStorage";
 
-const baseURL = "https://maralkish.ir";
+const baseURL = "https://gooldshop.ir";
+// const baseURL = "https://saedi.profishop.ir";
 
 const client = axios.create({
   baseURL,

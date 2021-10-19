@@ -13,7 +13,7 @@ import {
 } from "react-native";
 import { Modalize } from "react-native-modalize";
 import { isArray } from "lodash";
-import { StackActions, CommonActions } from "@react-navigation/native";
+import config from "../config.json";
 
 import { baseURL } from "../api/client";
 import { apiGetInvoice, apiRegisterOrder } from "../api/cart";
@@ -87,9 +87,12 @@ const Invoice = ({ navigation, route }) => {
     setButtonLoading(true);
     try {
       const refreshToken = await authStorage.getRefreshToken();
-      const updatedToken = await client.post("/api/store/customers/refresh-token", {
-        token: refreshToken,
-      });
+      const updatedToken = await client.post(
+        "/api/store/customers/refresh-token",
+        {
+          token: refreshToken,
+        }
+      );
       await authStorage.setToken(updatedToken.data.accessToken);
       await authStorage.setRefreshToken(updatedToken.data.refreshToken);
       const result = await apiRegisterOrder(
@@ -124,7 +127,7 @@ const Invoice = ({ navigation, route }) => {
       }
     } catch (error) {
       setButtonLoading(false);
-      console.log(error)
+      console.log(error);
       alert("خطا در ثبت سفارش");
     }
   };
@@ -491,10 +494,11 @@ const Invoice = ({ navigation, route }) => {
             </Text>
           </View>
           <AppButton
-            value={orderButtonString}
+            value={config.isDemoStore ? "غیر فعال" : orderButtonString}
             style={{ width: "40%" }}
             onPress={handleRegisterOrder}
             loading={buttonLoading}
+            disabled={config.isDemoStore}
           />
         </View>
       </View>
